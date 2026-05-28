@@ -82,10 +82,62 @@
 
   /* --- Extension Mockup Visuals --- */
   .mockup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 28px; align-items: start; }
-  .mockup-chrome { background: #1a1a2e; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(233,69,96,0.12); overflow: hidden; }
-  .mockup-chrome-bar { height: 32px; background: #0f0f23; display: flex; align-items: center; padding: 0 12px; gap: 6px; border-bottom: 1px solid #2a2a4a; }
-  .mockup-chrome-bar i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-  .mockup-chrome-bar i.r { background: #ff5f56; } .mockup-chrome-bar i.y { background: #ffbd2e; } .mockup-chrome-bar i.g { background: #27c93f; }
+  /* --- Realistic Browser Frame --- */
+  .browser-frame {
+    background: #0f1117; border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(233,69,96,0.12);
+    overflow: hidden; font-size: 11px;
+  }
+  .bf-titlebar {
+    height: 26px; background: #0d1117;
+    display: flex; align-items: center; padding: 0 10px; gap: 7px;
+    border-bottom: 1px solid rgba(48,54,61,0.6);
+  }
+  .bf-titlebar .dots { display: flex; gap: 6px; margin-left: 2px; }
+  .bf-titlebar .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .bf-titlebar .dot.r { background: #ff5f56; } .bf-titlebar .dot.y { background: #ffbd2e; } .bf-titlebar .dot.g { background: #27c93f; }
+  .bf-titlebar .win-title { flex: 1; text-align: center; color: var(--text-secondary); font-size: 9px; letter-spacing: 0.3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bf-titlebar .win-ctrls { color: var(--text-secondary); font-size: 9px; letter-spacing: 1px; }
+  .bf-tabs {
+    height: 27px; background: #0d1117;
+    display: flex; align-items: flex-end; padding: 0 6px; gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .bf-tab {
+    padding: 4px 12px; background: #161b22; border-radius: 8px 8px 0 0;
+    font-size: 10px; color: var(--text); max-width: 170px; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; border: 1px solid var(--border);
+    border-bottom: 1px solid #161b22; margin-bottom: -1px; position: relative;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .bf-tab .tab-favicon { font-size: 10px; line-height: 1; flex-shrink: 0; }
+  .bf-tab .tab-text { overflow: hidden; text-overflow: ellipsis; }
+  .bf-tab-plus { margin-left: 4px; color: var(--text-secondary); font-size: 14px; padding: 2px 8px; cursor: default; line-height: 1; align-self: center; margin-bottom: 2px; }
+  .bf-toolbar {
+    height: 33px; background: #0d1117;
+    display: flex; align-items: center; padding: 0 8px; gap: 5px;
+    border-bottom: 1px solid var(--border);
+  }
+  .bf-nav { color: var(--text-secondary); font-size: 12px; letter-spacing: 2px; user-select: none; padding: 0 2px; }
+  .bf-addressbar {
+    flex: 1; height: 23px; background: #202430; border: 1px solid var(--border);
+    border-radius: 12px; display: flex; align-items: center; padding: 0 10px;
+    font-size: 10px; color: var(--text-secondary); gap: 6px; overflow: hidden;
+  }
+  .bf-addressbar .lock { color: var(--green); font-size: 10px; flex-shrink: 0; }
+  .bf-addressbar .a-url { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+  .bf-addressbar .puzzle { color: var(--text-secondary); font-size: 11px; padding: 0 3px; flex-shrink: 0; }
+  .bf-content { }
+  .bf-content-popup {
+    position: relative;
+    min-height: 110px; background: #1a1a2e;
+  }
+  .bf-popup-panel {
+    width: 255px; top: 8px; right: 12px;
+    background: #16213e; border: 1px solid var(--border);
+    border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+    overflow: hidden; position: absolute; z-index: 2;
+  }
   .mockup-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; font-weight: 600; text-align: center; }
   /* popup mockup */
   .mockup-popup { padding: 14px; }
@@ -177,31 +229,76 @@
       <!-- Popup Mockup -->
       <div>
         <p class="mockup-label">Extension Popup</p>
-        <div class="mockup-chrome">
-          <div class="mockup-chrome-bar"><i class="r"></i><i class="y"></i><i class="g"></i></div>
-          <div class="mockup-popup">
-            <h4>Env Switcher</h4>
-            <p class="url">https://myapp.vercel.app/products/42?debug=true#section</p>
-            <p class="current">Current: Production</p>
-            <div class="env-btn active"><span class="dot">●</span><span class="label">Localhost</span><span class="host">localhost:3000</span></div>
-            <div class="env-btn"><span class="dot" style="visibility:hidden">●</span><span class="label">Staging</span><span class="host">staging.myapp.com</span></div>
-            <div class="env-btn"><span class="dot" style="visibility:hidden">●</span><span class="label">Production</span><span class="host">myapp.com</span></div>
-            <div class="footer">⚙ Settings</div>
+        <div class="browser-frame">
+          <div class="bf-titlebar">
+            <span class="dots"><i class="dot r"></i><i class="dot y"></i><i class="dot g"></i></span>
+            <span class="win-title">myapp.vercel.app &mdash; Google Chrome</span>
+            <span class="win-ctrls">&#9472; &#9633; &#10005;</span>
+          </div>
+          <div class="bf-tabs">
+            <div class="bf-tab"><span class="tab-favicon">&#127760;</span><span class="tab-text">My App &mdash; Product 42</span></div>
+            <span class="bf-tab-plus">+</span>
+          </div>
+          <div class="bf-toolbar">
+            <span class="bf-nav">&#8592; &#8594; &#8634;</span>
+            <div class="bf-addressbar">
+              <span class="lock">&#128274;</span>
+              <span class="a-url">myapp.vercel.app/products/42?debug=true</span>
+              <span class="puzzle">&#129513;</span>
+            </div>
+          </div>
+          <div class="bf-content bf-content-popup">
+            <div style="padding:12px 16px;">
+              <div style="width:55%;height:8px;background:#202430;border-radius:4px;margin-bottom:12px;"></div>
+              <div style="width:70%;height:6px;background:#1a1f2e;border-radius:3px;margin-bottom:5px;"></div>
+              <div style="width:65%;height:6px;background:#1a1f2e;border-radius:3px;margin-bottom:5px;"></div>
+              <div style="width:40%;height:6px;background:#1a1f2e;border-radius:3px;margin-bottom:5px;"></div>
+              <div style="width:75%;height:6px;background:#1a1f2e;border-radius:3px;"></div>
+            </div>
+            <div class="bf-popup-panel">
+              <div class="mockup-popup">
+                <h4>Env Switcher</h4>
+                <p class="url">https://myapp.vercel.app/products/42?debug=true#section</p>
+                <p class="current">Current: Production</p>
+                <div class="env-btn active"><span class="dot">●</span><span class="label">Localhost</span><span class="host">localhost:3000</span></div>
+                <div class="env-btn"><span class="dot" style="visibility:hidden">●</span><span class="label">Staging</span><span class="host">staging.myapp.com</span></div>
+                <div class="env-btn"><span class="dot" style="visibility:hidden">●</span><span class="label">Production</span><span class="host">myapp.com</span></div>
+                <div class="footer">⚙ Settings</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <!-- Options Page Mockup -->
       <div>
         <p class="mockup-label">Options Page</p>
-        <div class="mockup-chrome">
-          <div class="mockup-chrome-bar"><i class="r"></i><i class="y"></i><i class="g"></i></div>
-          <div class="mockup-options">
-            <h4>Environment Settings</h4>
-            <p class="sub">Configure the base URLs for each environment. Click to switch preserves path, query, and hash.</p>
-            <div class="row"><label>Localhost</label><input type="text" value="http://localhost:3000" readonly><span class="rm">×</span></div>
-            <div class="row"><label>Staging</label><input type="text" value="https://staging.myapp.com" readonly><span class="rm">×</span></div>
-            <div class="row"><label>Production</label><input type="text" value="https://myapp.com" readonly><span class="rm">×</span></div>
-            <div class="acts"><span class="btn-add">+ Add Environment</span><span class="btn-save">Save</span></div>
+        <div class="browser-frame">
+          <div class="bf-titlebar">
+            <span class="dots"><i class="dot r"></i><i class="dot y"></i><i class="dot g"></i></span>
+            <span class="win-title">chrome-extension://abc123def/options.html &mdash; Google Chrome</span>
+            <span class="win-ctrls">&#9472; &#9633; &#10005;</span>
+          </div>
+          <div class="bf-tabs">
+            <div class="bf-tab"><span class="tab-favicon">&#129513;</span><span class="tab-text">URL Environment Switcher &mdash; Options</span></div>
+            <span class="bf-tab-plus">+</span>
+          </div>
+          <div class="bf-toolbar">
+            <span class="bf-nav">&#8592; &#8594; &#8634;</span>
+            <div class="bf-addressbar">
+              <span class="lock">&#128274;</span>
+              <span class="a-url">chrome-extension://abc123def/options.html</span>
+              <span class="puzzle">&#129513;</span>
+            </div>
+          </div>
+          <div class="bf-content">
+            <div class="mockup-options">
+              <h4>Environment Settings</h4>
+              <p class="sub">Configure the base URLs for each environment. Click to switch preserves path, query, and hash.</p>
+              <div class="row"><label>Localhost</label><input type="text" value="http://localhost:3000" readonly><span class="rm">×</span></div>
+              <div class="row"><label>Staging</label><input type="text" value="https://staging.myapp.com" readonly><span class="rm">×</span></div>
+              <div class="row"><label>Production</label><input type="text" value="https://myapp.com" readonly><span class="rm">×</span></div>
+              <div class="acts"><span class="btn-add">+ Add Environment</span><span class="btn-save">Save</span></div>
+            </div>
           </div>
         </div>
       </div>
