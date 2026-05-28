@@ -72,6 +72,37 @@
   .pricing-box .period { color: var(--text-secondary); }
   
   footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.85rem; }
+
+  /* --- Extension Mockup Visuals --- */
+  .mockup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 28px; align-items: start; }
+  .mockup-chrome { background: #1a1a2e; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(233,69,96,0.12); overflow: hidden; }
+  .mockup-chrome-bar { height: 32px; background: #0f0f23; display: flex; align-items: center; padding: 0 12px; gap: 6px; border-bottom: 1px solid #2a2a4a; }
+  .mockup-chrome-bar i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .mockup-chrome-bar i.r { background: #ff5f56; } .mockup-chrome-bar i.y { background: #ffbd2e; } .mockup-chrome-bar i.g { background: #27c93f; }
+  .mockup-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; font-weight: 600; text-align: center; }
+  /* popup mockup */
+  .mockup-popup { padding: 14px; }
+  .mockup-popup h4 { font-size: 13px; font-weight: 600; color: #e94560; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 8px; }
+  .mockup-popup .url { font-size: 10px; color: #7a7a9a; word-break: break-all; line-height: 1.4; margin: 0 0 3px; }
+  .mockup-popup .current { font-size: 10px; color: #4ecca3; font-weight: 500; margin: 0 0 10px; padding-bottom: 10px; border-bottom: 1px solid #2a2a4a; }
+  .mockup-popup .env-btn { display: flex; align-items: center; gap: 8px; padding: 9px 11px; border: 1px solid #2a2a4a; border-radius: 6px; background: #16213e; color: #c0c0d0; font-size: 12px; margin-bottom: 5px; }
+  .mockup-popup .env-btn.active { border-color: #e94560; color: #fff; background: #1a2744; box-shadow: 0 0 10px rgba(233,69,96,0.15); }
+  .mockup-popup .env-btn .dot { color: #4ecca3; font-size: 8px; }
+  .mockup-popup .env-btn .label { font-weight: 500; flex: 1; }
+  .mockup-popup .env-btn .host { font-size: 10px; color: #6a6a8a; }
+  .mockup-popup .footer { padding-top: 8px; border-top: 1px solid #2a2a4a; font-size: 10px; color: #6a6a8a; margin-top: 3px; }
+  /* options mockup */
+  .mockup-options { padding: 20px; }
+  .mockup-options h4 { font-size: 18px; color: #e94560; margin: 0 0 4px; }
+  .mockup-options .sub { font-size: 11px; color: #7a7a9a; margin: 0 0 20px; }
+  .mockup-options .row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; padding: 10px; background: #16213e; border-radius: 6px; border: 1px solid #2a2a4a; }
+  .mockup-options .row label { font-size: 10px; color: #7a7a9a; text-transform: uppercase; letter-spacing: 0.4px; min-width: 70px; }
+  .mockup-options .row input { flex: 1; padding: 6px 9px; background: #0f0f23; border: 1px solid #2a2a4a; border-radius: 4px; color: #e0e0e0; font-size: 12px; font-family: monospace; }
+  .mockup-options .row .rm { color: #e94560; border: 1px solid #3a2040; background: transparent; padding: 4px 9px; border-radius: 4px; font-size: 13px; flex-shrink: 0; }
+  .mockup-options .acts { margin-top: 16px; display: flex; gap: 10px; }
+  .mockup-options .acts span { padding: 8px 15px; border-radius: 6px; font-size: 11px; border: 1px solid #2a2a4a; }
+  .mockup-options .acts .btn-save { background: #e94560; color: #fff; border-color: #e94560; }
+  .mockup-options .acts .btn-add { background: #16213e; color: #c0c0d0; }
   
   @media (max-width: 600px) {
     header { padding: 48px 16px 32px; }
@@ -118,6 +149,46 @@
       <div class="feature-card">
         <h3>Open Source (MIT)</h3>
         <p>Full source on GitHub. Fork it, modify it, ship it to your team. No vendor lock-in. No subscription.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>See it in action</h2>
+    <p style="color:var(--text-secondary); margin-bottom:8px; max-width:560px;">The popup appears when you click the extension icon. The Options page lets you configure your environments.</p>
+    <div class="mockup-grid">
+      <!-- Popup Mockup -->
+      <div>
+        <p class="mockup-label">Extension Popup</p>
+        <div class="mockup-chrome">
+          <div class="mockup-chrome-bar"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+          <div class="mockup-popup">
+            <h4>Env Switcher</h4>
+            <p class="url">https://myapp.vercel.app/products/42?debug=true#section</p>
+            <p class="current">Current: Production</p>
+            <div class="env-btn active"><span class="dot">●</span><span class="label">Localhost</span><span class="host">localhost:3000</span></div>
+            <div class="env-btn"><span class="dot" style="visibility:hidden">●</span><span class="label">Staging</span><span class="host">staging.myapp.com</span></div>
+            <div class="env-btn"><span class="dot" style="visibility:hidden">●</span><span class="label">Production</span><span class="host">myapp.com</span></div>
+            <div class="footer">⚙ Settings</div>
+          </div>
+        </div>
+      </div>
+      <!-- Options Page Mockup -->
+      <div>
+        <p class="mockup-label">Options Page</p>
+        <div class="mockup-chrome">
+          <div class="mockup-chrome-bar"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+          <div class="mockup-options">
+            <h4>Environment Settings</h4>
+            <p class="sub">Configure the base URLs for each environment. Click to switch preserves path, query, and hash.</p>
+            <div class="row"><label>Localhost</label><input type="text" value="http://localhost:3000" readonly><span class="rm">×</span></div>
+            <div class="row"><label>Staging</label><input type="text" value="https://staging.myapp.com" readonly><span class="rm">×</span></div>
+            <div class="row"><label>Production</label><input type="text" value="https://myapp.com" readonly><span class="rm">×</span></div>
+            <div class="acts"><span class="btn-add">+ Add Environment</span><span class="btn-save">Save</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
