@@ -38,6 +38,12 @@ When you click an environment button, the extension:
 
 Example: browsing `http://localhost:3000/products/42?tab=reviews` → clicking "Staging" → navigates to `https://staging.example.com/products/42?tab=reviews`
 
+## Developer Guide
+
+Deep-dive article on building Chrome Extensions with Manifest V3 — using url-switcher as the complete case study: [docs/dev-guide.md](docs/dev-guide.md)
+
+Covers: Manifest V3 structure, popup architecture, URL parsing and environment detection, path/query/hash preservation logic, chrome.storage.sync, options page CRUD, service workers, testing/debugging, and CWS vs unpacked distribution.
+
 ## Roadmap
 
 - **Keyboard shortcuts** — assign hotkeys to each environment
