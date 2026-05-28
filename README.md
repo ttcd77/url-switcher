@@ -19,6 +19,8 @@ Web developers switch environments 50+ times a day during code review, QA, and d
   <a href="#install"><strong>Install in 60 Seconds →</strong></a>
   &nbsp;·&nbsp;
   <a href="docs/dev-guide.md"><strong>Developer Guide →</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://dev.to/ttcd77/build-a-chrome-extension-that-switches-localhoststagingproduction-urls-28hc"><strong>Read the build guide on DEV Community →</strong></a>
 </p>
 
 ---
