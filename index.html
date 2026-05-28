@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URL Environment Switcher — One-Click Localhost/Staging/Prod Toggle</title>
-<meta name="description" content="Free Chrome extension for web developers. Switch between localhost, staging, and production environments in one click. Preserves path, query params, and hash. Open source, MIT license, Manifest V3.">
-<meta property="og:title" content="URL Environment Switcher — One-Click Dev Environment Toggle (Chrome Extension)">
-<meta property="og:description" content="Free Chrome extension. Switch between localhost, staging, and production in one click. Path, query, and hash preserved. MIT licensed.">
+<title>URL Environment Switcher — One-Click Localhost/Staging/Prod Toggle (Chrome + Firefox)</title>
+<meta name="description" content="Free browser extension for web developers. Switch between localhost, staging, and production environments in one click. Available for Chrome and Firefox. Preserves path, query params, and hash. Open source, MIT license, Manifest V3.">
+<meta property="og:title" content="URL Environment Switcher — One-Click Dev Environment Toggle (Chrome + Firefox)">
+<meta property="og:description" content="Free browser extension. Switch between localhost, staging, and production in one click. Chrome & Firefox. Path, query, and hash preserved. MIT licensed.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://raw.githubusercontent.com/ttcd77/url-switcher/main/icons/icon128.png">
 <meta name="twitter:card" content="summary">
@@ -335,6 +335,35 @@
     </div>
     <p style="margin-top:24px; padding:16px; background:rgba(63,185,80,0.08); border:1px solid rgba(63,185,80,0.2); border-radius:var(--radius); font-size:0.9rem; color:var(--green);">
       Coming to Chrome Web Store soon — one-click install without Developer Mode. Until then, the unpacked flow above works identically.
+    </p>
+
+    <h3 style="margin-top:36px; margin-bottom:4px;">Firefox Install</h3>
+    <p style="color:var(--text-secondary); margin-bottom:20px; max-width:560px; font-size:0.95rem;">The extension works in Firefox too — same code, same features, zero changes. Uses the WebExtensions API.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Download the Firefox build</h4>
+          <p><a href="https://github.com/ttcd77/url-switcher/raw/master/firefox/url-switcher-firefox-v1.0.0.zip" style="font-weight:600;">url-switcher-firefox-v1.0.0.zip</a> (6.6 KB) — purpose-built for Firefox with <code>browser_specific_settings</code> in manifest</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Load in Firefox</h4>
+          <p>Extract the ZIP, go to <code>about:debugging#/runtime/this-firefox</code>, click <strong>Load Temporary Add-on</strong>, and select the <code>manifest.json</code> file</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Configure your environments</h4>
+          <p>Go to <code>about:addons</code>, find the extension, click the <strong>Options</strong> tab, and set your environment URLs</p>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:24px; padding:16px; background:rgba(88,166,255,0.08); border:1px solid rgba(88,166,255,0.2); border-radius:var(--radius); font-size:0.9rem; color:var(--blue);">
+      Coming to Mozilla Add-ons (AMO) soon. Free developer registration — no fee like Chrome Web Store. Until then, temporary loading works identically.
     </p>
   </div>
 </section>
