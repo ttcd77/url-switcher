@@ -4,10 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>URL Environment Switcher — One-Click Localhost/Staging/Prod Toggle</title>
-<meta name="description" content="Free Chrome extension for web developers. Switch between localhost, staging, and production environments in one click. Open source. MIT licensed.">
-<meta property="og:title" content="URL Environment Switcher — One-Click Dev Environment Toggle">
-<meta property="og:description" content="Free Chrome extension. Switch between environments in one click.">
+<meta name="description" content="Free Chrome extension for web developers. Switch between localhost, staging, and production environments in one click. Preserves path, query params, and hash. Open source, MIT license, Manifest V3.">
+<meta property="og:title" content="URL Environment Switcher — One-Click Dev Environment Toggle (Chrome Extension)">
+<meta property="og:description" content="Free Chrome extension. Switch between localhost, staging, and production in one click. Path, query, and hash preserved. MIT licensed.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://raw.githubusercontent.com/ttcd77/url-switcher/main/icons/icon128.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="URL Environment Switcher — Free Chrome Extension">
+<meta name="twitter:description" content="One-click toggle between localhost, staging, and production. Path preserved. Free and open source.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ttcd77/url-switcher/main/icons/icon128.png">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ttcd77.github.io/url-switcher/">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -109,6 +116,13 @@
     section { padding: 40px 0; }
     .cta-group { flex-direction: column; align-items: center; }
   }
+
+  /* FAQ */
+  .faq-list { margin-top: 20px; }
+  .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; background: var(--bg); }
+  .faq-q { padding: 16px 20px; cursor: default; font-weight: 600; font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--text-secondary); }
+  .faq-a { padding: 0 20px 16px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -253,6 +267,38 @@
 </section>
 
 <section>
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How do I switch between localhost and production in Chrome?</div>
+        <div class="faq-a">Install URL Environment Switcher by loading it as an unpacked extension. Right-click the extension icon, select Options, and configure your environment base URLs (e.g. <code>http://localhost:3000</code> and <code>https://myapp.com</code>). Then click the extension icon on any page to toggle between environments with one click. The extension preserves your current path, query parameters, and hash — so <code>/products/42?debug=true</code> transfers between environments automatically.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is a URL environment switcher Chrome extension?</div>
+        <div class="faq-a">A URL environment switcher is a developer tool that lets you jump between different versions of the same web application — typically localhost (your machine), staging/preview (testing server), and production (live site). Instead of manually editing the URL bar every time, you click a single button in the extension popup. It's especially useful during code review, QA testing, and debugging when you need to compare behavior across environments.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is this extension free?</div>
+        <div class="faq-a">Yes. The core URL Environment Switcher is completely free and open source under the MIT license. You can use it forever with no limits. A premium version with team features (multiple project sets, keyboard shortcuts, cloud sync) is planned via ExtensionPay, but the current free version handles all basic environment switching needs for individual developers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does it work with custom domains and subdomains?</div>
+        <div class="faq-a">Yes. You can configure any base URL patterns in the Options page — localhost ports, staging subdomains, preview deployments, QA servers, or any custom domain. Each environment consists of a label (shown in the popup) and a base URL. The extension detects your current environment and builds the target URL by replacing the base while keeping the path intact.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is this different from bookmark folders?</div>
+        <div class="faq-a">Bookmark folders require you to manually find the right bookmark for each page. URL Environment Switcher automatically detects which environment you're on and builds the correct destination URL for any page you're viewing. It preserves the exact path, query string, and hash — things bookmark folders can't do. It also works with Chrome sync so your environment configs follow you across devices.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does it collect my data?</div>
+        <div class="faq-a">No. URL Environment Switcher runs entirely on your local machine. It does not send any data to external servers, does not use analytics, and does not track your browsing. Your environment configurations are stored in Chrome's local storage and synced across your own devices via chrome.storage.sync if you're signed into Chrome. The full privacy policy is available in the repository.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="container" style="text-align:center;">
     <h2>Free. Open Source. MIT License.</h2>
     <p style="color:var(--text-secondary); margin: 12px 0 24px; max-width: 480px; margin-left: auto; margin-right: auto;">The core extension is and always will be free. A premium version with team features (multiple project sets, keyboard shortcuts, ExtensionPay) is in development.</p>
@@ -266,8 +312,7 @@
 <footer>
   <p>Built by <a href="https://github.com/ttcd77">selfloom</a> — tools for developers who hate subscriptions.</p>
   <p style="margin-top:8px;">
-    Also: <a href="https://github.com/ttcd77/form-handler">Form Handler for Google Sheets</a> ·
-    <a href="https://github.com/ttcd77/freelance-contract-kit">Freelance Contract Kit</a>
+    Also: <a href="https://github.com/ttcd77/form-handler">Form Handler for Google Sheets</a> — zero-cost contact form backend
   </p>
 </footer>
 
