@@ -4,6 +4,7 @@
   <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="version">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
   <img src="https://img.shields.io/badge/manifest-v3-orange" alt="manifest v3">
+  <img src="https://img.shields.io/badge/firefox-ready-blue" alt="firefox ready">
   <img src="https://komarev.com/ghpvc/?username=ttcd77&repo=url-switcher&label=views&color=blueviolet" alt="views">
 </p>
 
@@ -51,7 +52,18 @@ git clone https://github.com/ttcd77/url-switcher.git
 ```
 Then follow steps 3-4 above, pointing "Load unpacked" at the cloned folder.
 
-*Coming to Chrome Web Store soon — one-click install without Developer Mode. Until then, Option A works identically.*
+### Firefox Install
+
+The same extension works in Firefox with zero code changes (WebExtensions API).  
+Download the Firefox build: **[url-switcher-firefox-v1.0.0.zip](https://github.com/ttcd77/url-switcher/raw/master/firefox/url-switcher-firefox-v1.0.0.zip)** (6.6 KB)
+
+1. Extract the ZIP
+2. Go to `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on** → select `manifest.json` from the extracted folder
+3. Right-click the extension → **Manage Extension** → configure your environment URLs in the Options tab
+
+*Coming to Mozilla Add-ons (AMO) soon. Until then, temporary loading works identically.*
+
+*Chrome Web Store also coming soon — one-click install without Developer Mode.*
 
 ## Usage
 
