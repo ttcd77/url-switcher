@@ -93,16 +93,6 @@ Reasoning: The extension serves software developers by automating environment UR
 
 ---
 
-## Pricing Strategy
-
-| Tier | Price | Features |
-|------|-------|----------|
-| **Open Source (GitHub)** | Free | 3 default environments, custom unlimited, MIT license |
-| **Chrome Web Store (Free)** | Free | Same as OSS, one-click install |
-| **Premium (ExtensionPay, planned)** | $4.99 one-time | Multiple project sets, keyboard shortcuts (Ctrl+1/2/3), import/export configs, team sharing |
-
-The free version on CWS drives discovery and trust. The premium version monetizes power users who manage many projects.
-
 ---
 
 ## SEO Keywords (for store listing optimization)

@@ -292,7 +292,6 @@ This is the Manifest V3 equivalent of an "on install" event. Future features tha
 - **Keyboard shortcuts:** `chrome.commands` to assign hotkeys per environment (e.g., `Ctrl+Shift+1` for localhost)
 - **Context menus:** right-click a link → "Open in Staging"
 - **Badge text:** show current environment as a tiny badge on the extension icon
-- **ExtensionPay integration:** check premium status on install
 
 The service worker is event-driven. It wakes up when an event fires, processes it, and Chrome terminates it after ~30 seconds of idle. No polling, no timers, no persistent state — this is the correct pattern for Manifest V3.
 

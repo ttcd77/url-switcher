@@ -110,7 +110,6 @@ Customize these in the Options page (right-click extension icon → **Options**,
 - [ ] Keyboard shortcuts for each environment
 - [ ] Multiple environment sets (switch between project configs)
 - [ ] Team sharing — export/import environment configs
-- [ ] Premium tier via ExtensionPay ($4.99 one-time) — unlimited envs, pattern matching, priority support
 
 ## Contribute
 

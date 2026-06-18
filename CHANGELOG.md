@@ -26,14 +26,13 @@ All notable changes to URL Environment Switcher.
 - Cross-linked with sibling project: [Form Handler for Google Sheets](https://github.com/ttcd77/form-handler)
 
 ### Known Limitations
-- Fixed to exactly 3 environment slots (premium tier planned for unlimited)
+- Fixed to exactly 3 environment slots (unlimited environments planned)
 - No regex/pattern-based environment detection (planned)
 - Not yet listed on Chrome Web Store (pending developer registration)
 - No automated environment switching based on URL patterns
 
 ### Upcoming
 - Chrome Web Store listing ($5 developer registration pending — RQ-005)
-- ExtensionPay integration for $4.99 one-time premium tier
 - Unlimited environments + domain pattern matching
 - Keyboard shortcuts for environment switching
 
